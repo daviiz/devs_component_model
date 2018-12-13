@@ -9,14 +9,17 @@
 // Default Package
 package componentASW;
 
-import componentASW.ef.ExperimentFrame;
+import java.awt.Dimension;
+import java.awt.Point;
+
+import view.modeling.ViewableComponent;
 import view.modeling.ViewableDigraph;
 
 public class CombatSysModel extends ViewableDigraph{
 
     // Add Default Constructor
     public CombatSysModel(){
-        this("CombatSys_0_1");
+        this("CombatSystem");
     }
 
     // Add Parameterized Constructor
@@ -31,8 +34,8 @@ public class CombatSysModel extends ViewableDigraph{
 //add test input ports:
 
         // Initialize sub-components
-        ViewableDigraph ef_1_1 =  new ExperimentFrame("ef_1_1");
-        ViewableDigraph simModel_1_1 =  new SimModel("simModel_1_1");
+        ViewableDigraph ef_1_1 =  new ExperimentFrame("f");
+        ViewableDigraph simModel_1_1 =  new SimModel("sim");
 
         // Add sub-components
         add(ef_1_1);
@@ -47,5 +50,10 @@ public class CombatSysModel extends ViewableDigraph{
 // Structure information end
         initialize();
         }
+	    public void layoutForSimView() {
+			preferredSize = new Dimension(1700, 1500);
+			((ViewableComponent) withName("f")).setPreferredLocation(new Point(5, 5));
+			((ViewableComponent) withName("sim")).setPreferredLocation(new Point(350, 35));
+		}
 
     }

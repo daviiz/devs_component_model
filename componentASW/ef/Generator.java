@@ -9,12 +9,16 @@
 // Default Package
 package componentASW.ef;
 
+import GenCol.entity;
+import componentASW.OM.CombatEnt;
+import model.modeling.content;
 import model.modeling.message;
 import view.modeling.ViewableAtomic;
 
 public class Generator extends ViewableAtomic{
 
-    protected double processing_time;
+    
+    protected CombatEnt shipEnt;
 
     // Add Default Constructor
     public Generator(){
@@ -26,7 +30,6 @@ public class Generator extends ViewableAtomic{
 // Structure information start
         // Add input port names
         addInport("wp_launch");
-
         // Add output port names
         addOutport("scen_gen");
         addOutport("entity_gen");
@@ -40,12 +43,19 @@ public class Generator extends ViewableAtomic{
     // Add initialize function
     public void initialize(){
         super.initialize();
-        phase = "passive";
-        sigma = INFINITY;
+        phase = "active";
+        sigma = 0;
+        shipEnt = new CombatEnt();
     }
 
     // Add external transition function
     public void deltext(double e, message x){
+    	Continue(e);
+    	for (int i = 0; i < x.getLength(); i++) {
+			if (messageOnPort(x, "wp_launch", i)) {
+				shipEnt = new CombatEnt((CombatEnt)x.getValOnPort("wp_launch", i));
+			}
+		}
     }
 
     // Add internal transition function
@@ -53,14 +63,23 @@ public class Generator extends ViewableAtomic{
     }
 
     // Add confluent function
-    public void deltcon(double e, message x){
-    }
+//    public void deltcon(double e, message x){
+//    }
 
     // Add output function
     public message out(){
-    	return null;
+    	message m = new message();
+		if(phaseIs("active")) {
+			content con = makeContent("scen_gen", new entity("scen_starting"));
+			m.add(con);
+			
+			if(!shipEnt.eq("combatEntBase")) {
+				content con2 = makeContent("entity_gen", shipEnt);
+				m.add(con2);
+			}
+			passivate();
+		}
+		return m;
     }
-
-    // Add Show State function
-    }
+}
 

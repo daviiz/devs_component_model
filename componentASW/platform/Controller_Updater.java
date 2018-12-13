@@ -3,7 +3,7 @@ package componentASW.platform;
 import model.modeling.message;
 import view.modeling.ViewableAtomic;
 
- class Controller_Updater extends ViewableAtomic {
+ public class Controller_Updater extends ViewableAtomic {
 	
 	private double identify_time;
 	

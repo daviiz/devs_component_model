@@ -47,7 +47,8 @@ public class Sensor_Updater extends ViewableAtomic {
     }
 
     // Add output function
-    public message out(){return null;
+    public message out(){
+    	return null;
     }
 
     // Add Show State function

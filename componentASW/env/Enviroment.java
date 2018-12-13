@@ -26,6 +26,7 @@ public class Enviroment extends ViewableAtomic{
 // Structure information start
         // Add input port names
         addInport("scen_info");
+        addInport("move_result");
 
         // Add output port names
         addOutport("env_info");

@@ -3,7 +3,7 @@ package componentASW.weapon;
 import model.modeling.message;
 import view.modeling.ViewableAtomic;
 
- class Controller_Updater extends ViewableAtomic {
+public class Controller_Updater extends ViewableAtomic {
 	
 	
 	// Add Default Constructor
