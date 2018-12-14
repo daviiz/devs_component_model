@@ -12,9 +12,9 @@ package componentASW;
 import java.awt.Dimension;
 import java.awt.Point;
 
-import componentASW.OM.CombatEnt;
 import componentASW.ef.Generator;
 import componentASW.ef.Transducer;
+import componentASW.om.CombatEnt;
 import view.modeling.ViewableAtomic;
 import view.modeling.ViewableComponent;
 import view.modeling.ViewableDigraph;

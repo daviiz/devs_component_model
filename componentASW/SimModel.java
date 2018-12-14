@@ -41,8 +41,8 @@ public class SimModel extends ViewableDigraph{
 //add test input ports:
 
         // Initialize sub-components
-        ViewableDigraph warship =  new Platform("warship",0,1000,30);
-        ViewableDigraph submarine =  new Platform("submarine",0,-1000,60);
+        ViewableDigraph warship =  new Platform("warship",0,1000,10);
+        ViewableDigraph submarine =  new Platform("submarine",0,-1000,20);
         
         ViewableAtomic enviroment =  new Enviroment("enviroment");
         ViewableAtomic damageAssessment =  new DamageAssessment("damageAssessment");
@@ -142,17 +142,17 @@ public class SimModel extends ViewableDigraph{
         initialize();
         }
 	    public void layoutForSimView() {
-			preferredSize = new Dimension(2300, 1400);
-			((ViewableComponent) withName("warship")).setPreferredLocation(new Point(320, 15));
-			((ViewableComponent) withName("submarine")).setPreferredLocation(new Point(320, 900));
-			((ViewableComponent) withName("terpedo_1")).setPreferredLocation(new Point(350, 15));
-			((ViewableComponent) withName("decoy_1")).setPreferredLocation(new Point(350, 15));
-			((ViewableComponent) withName("decoy_2")).setPreferredLocation(new Point(350, 15));
+			preferredSize = new Dimension(2300, 1600);
+			((ViewableComponent) withName("warship")).setPreferredLocation(new Point(360, 15));
+			((ViewableComponent) withName("submarine")).setPreferredLocation(new Point(320, 1100));
+			((ViewableComponent) withName("terpedo_1")).setPreferredLocation(new Point(320, 580));
+			((ViewableComponent) withName("decoy_1")).setPreferredLocation(new Point(1200, 15));
+			((ViewableComponent) withName("decoy_2")).setPreferredLocation(new Point(1200, 900));
 //			((ViewableComponent) withName("decoy_3")).setPreferredLocation(new Point(350, 15));
 //			((ViewableComponent) withName("decoy_4")).setPreferredLocation(new Point(350, 15));
 			
 			((ViewableComponent) withName("enviroment")).setPreferredLocation(new Point(15, 15));
-			((ViewableComponent) withName("damageAssessment")).setPreferredLocation(new Point(15, 1250));
+			((ViewableComponent) withName("damageAssessment")).setPreferredLocation(new Point(15, 300));
 		}
 
     }

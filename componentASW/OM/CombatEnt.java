@@ -1,4 +1,4 @@
-package componentASW.OM;
+package componentASW.om;
 
 import GenCol.ExternalRepresentation;
 

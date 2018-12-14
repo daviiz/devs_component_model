@@ -51,9 +51,9 @@ public class CombatSysModel extends ViewableDigraph{
         initialize();
         }
 	    public void layoutForSimView() {
-			preferredSize = new Dimension(1700, 1500);
+			preferredSize = new Dimension(2300, 1800);
 			((ViewableComponent) withName("f")).setPreferredLocation(new Point(5, 5));
-			((ViewableComponent) withName("sim")).setPreferredLocation(new Point(350, 35));
+			((ViewableComponent) withName("sim")).setPreferredLocation(new Point(5, 200));
 		}
 
     }

@@ -10,7 +10,7 @@
 package componentASW.ef;
 
 import GenCol.entity;
-import componentASW.OM.CombatEnt;
+import componentASW.om.CombatEnt;
 import model.modeling.content;
 import model.modeling.message;
 import view.modeling.ViewableAtomic;
